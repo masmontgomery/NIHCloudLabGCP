@@ -2,7 +2,33 @@
 
 Google Cloud offers three flavors of Notebook instances: User-Managed, Google Managed, and Instances. User-Managed instances offer the most flexibility in terms of installing local software via conda/mamba or launching from custom containers. [Google Managed](https://cloud.google.com/vertex-ai/docs/workbench/managed/introduction) and [Instances](https://cloud.google.com/vertex-ai/docs/workbench/instances/introduction) allow for 'on the fly' machine resizing and notebook scheduling, as well as not worrying about resource availability, but they run in a tenant project (rather than your project) and offer less flexibility for installing custom software. Most machine-learning related software are pre-installed, but these can be hard to use for a lot of bioinformatic tasks where you need to install CLI tools with conda.
 
-### Spin up a User-Managed Notebook Instance
+### 1. Spin up an Instance
+1. Start by clicking the `hamburger menu` (the three horizontal lines in the top left of your console). Go to `Artificial Intelligence > Vertex AI > Workbench`. 
+
+  ![selectvertexai](/images/1_select_vertexAI.png)
+
+2. If not already selected, click **Instances**, then **Instances**
+3. Click **+ Create New**
+
+   *image*
+   
+4. Select **Advanced Options** at the bottom of the **New Instance** pop-up window
+5. Provide a name for your new instance using letters, numbers, and hyphens (-). Select a region and zone for the new instance. For best network performance, select the region that is geographically closest to you.  Click **Continue**
+
+   *image*
+   
+6. On the Environment screen, select "Use the latest version" if not already selected. Skip the other sections. Click **Continue**.
+7. On the Machine type screen, select the desired number of CPUs/GPUs. This is usually specified by the tutorial you are completing.
+
+   *image*
+   
+8. On the same screen, verify that **Enable Idle Shutdown** is selected and specify the idle minutes for shutdown. This means it will shutdown automatically after this many minutes. We recommend 30 minutes. Click **Create**.
+
+  *image*
+
+9. The remaining sections are skipped for our purposes.  Further details can be found in the official documentation: https://cloud.google.com/vertex-ai/docs/workbench/instances/create
+
+### 2. Spin up a User-Managed Notebook Instance
 1. Start by clicking the `hamburger menu` (the three horizontal lines in the top left of your console). Go to `Artificial Intelligence > Vertex AI > Workbench`. 
 
   ![selectvertexai](/images/1_select_vertexAI.png)
